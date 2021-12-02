@@ -1,4 +1,3 @@
-import {Star, StarFill} from "react-bootstrap-icons";
 import {useState} from "react";
 
 export default function Rating(defautlRating) {
@@ -15,7 +14,7 @@ export default function Rating(defautlRating) {
     return(
         <> 
             <button onClick={plus}>+</button>
-            <p>{value}</p>
+                <p>{value}</p>
             <button onClick={minus}>-</button>
         </>
     )
