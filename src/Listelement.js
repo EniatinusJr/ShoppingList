@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ListGroup } from "react-bootstrap";
 
 
 export default function Listelement(props) {
@@ -7,7 +8,7 @@ export default function Listelement(props) {
 
     return (
         <>
-            <ListGroup.Item><input type="checkbox" checked={state} onChange={() => {setState(e.target.checked); props.checked(state)}}/> {props.name} {props.date}</ListGroup.Item>
+            <ListGroup.Item><input type="checkbox" checked={state} onChange={(e) => {setState(e.target.checked); props.checked(state)}}/> {props.name} {props.date}</ListGroup.Item>
         </>
     );
 }
