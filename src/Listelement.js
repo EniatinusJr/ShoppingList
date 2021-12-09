@@ -11,7 +11,7 @@ export default function Listelement(props) {
         <>
             <ListGroup.Item>
                 <InputGroup className="mb-3">
-                    <InputGroup.Checkbox aria-label="Checkbox for following text input" checked={checked} onChange={(e) => { setChecked(e.target.checked); props.onChange(checked) }}/>
+                    <InputGroup.Checkbox aria-label="Checkbox for following text input" checked={checked} onChange={(e) => { setChecked(e.target.checked); props.onChange(e.target.checked) }}/>
                     <FormControl aria-label="Text input with checkbox" value={props.name + " " + props.date} disabled />
                     <Button variant="outline-secondary" id="button-addon2" onClick={(e) => props.onClick()}>
                         <TrashFill />

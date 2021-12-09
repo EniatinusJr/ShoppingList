@@ -61,7 +61,18 @@ function App() {
         <Col xs={7} md={4}>
           <ListGroup>
             {list.map((listElement) =>
-              <ListElement name={listElement.name} onChange={(v) => listElement.checked = v} checked={listElement.checked} date={listElement.date} timestamp={listElement.timeStamp} onClick={() => delItem(listElement.timeStamp)} />
+              <ListElement 
+                name={listElement.name} 
+                onChange={(v) => {
+                  listElement.checked = v;
+                  //let listTemp = list.filter(li => li.timeStamp==listElement.timeStamp);
+                  setList([...list]);
+                  localStorage.setItem("list", JSON.stringify([...list]))
+                }} 
+                checked={listElement.checked} 
+                date={listElement.date} 
+                timestamp={listElement.timeStamp} 
+                onClick={() => delItem(listElement.timeStamp)} />
             )}
           </ListGroup>
         </Col>
