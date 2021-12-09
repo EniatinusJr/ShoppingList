@@ -61,7 +61,7 @@ function App() {
         <Col xs={7} md={4}>
           <ListGroup>
             {list.map((listElement) => 
-              <ListElement name={listElement.name} checked={ (v) => listElement.checked = v} day={listElement.date.day} month={listElement.date.month} year={listElement.date.year}/>
+              <ListElement name={listElement.name} checked={ (v) => listElement.checked = v} date={listElement.date}/>
             )}
           </ListGroup>
         </Col>
