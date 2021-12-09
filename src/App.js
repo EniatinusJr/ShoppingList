@@ -17,10 +17,10 @@ function App() {
     day = date.getDate(),
     month = (date.getMonth() + 1 ),
     year = date.getFullYear();
-    let listTemp = [...list];
-    listTemp.push({name, checked, timeStamp: Date.now(), date: [day, month , year]});
+    let item = {name, checked, timeStamp: Date.now(), date: [day, month , year]};
+    let listTemp = [...list, item]
     setList(listTemp);
-    localStorage.setItem("list", JSON.stringify(list))
+    localStorage.setItem("list", JSON.stringify(listTemp))
   }
 
   useEffect(
@@ -55,7 +55,7 @@ function App() {
         <Col xs={7} md={4}>
           <ListGroup>
             {list.map((listElement) => 
-              <ListElement name={listElement.name} checked={ (v) => listElement.checked = v} date={listElement.date} />
+              <ListElement name={listElement.name} checked={ (v) => listElement.checked = v} day={listElement.date.day} month={listElement.date.month} year={listElement.date.year}/>
             )}
           </ListGroup>
         </Col>
