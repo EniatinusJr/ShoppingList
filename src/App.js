@@ -35,6 +35,7 @@ function App() {
     console.log(timeStamp)
     let newList = JSON.parse(localStorage.getItem("list")).filter(item => item.timeStamp !== timeStamp)
     setList(newList);
+    localStorage.setItem("list", JSON.stringify(newList))
   }
 
   return (
