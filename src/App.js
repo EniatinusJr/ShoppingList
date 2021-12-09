@@ -17,7 +17,7 @@ function App() {
     day = date.getDate(),
     month = (date.getMonth() + 1 ),
     year = date.getFullYear();
-    let item = {name, checked, timeStamp: Date.now(), date: [day, month , year]};
+    let item = {name, checked, timeStamp: Date.now(), date: [day, month , year].join("/")};
     let listTemp = [...list, item]
     setList(listTemp);
     localStorage.setItem("list", JSON.stringify(listTemp))
@@ -30,7 +30,12 @@ function App() {
     }
   }
   , []
-  )
+  );
+
+  function delItem(timeStamp) {
+    
+
+  }
 
   return (
     <div>
