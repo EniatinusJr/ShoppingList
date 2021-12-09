@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Row, Col, InputGroup, FormControl, Button, ListGroup} from 'react-bootstrap';
-import {List} from "react-bootstrap-icons";
+import {TrashFill} from "react-bootstrap-icons";
 import {useState, useEffect} from "react";
 import ListElement from './Listelement';
 
@@ -33,8 +33,9 @@ function App() {
   );
 
   function delItem(timeStamp) {
-    
-
+      list.map((item) => {if(item.timeStamp == timeStamp) {
+        list.remove(item)}
+      })
   }
 
   return (
