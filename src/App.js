@@ -33,11 +33,8 @@ function App() {
 
   function delItem(timeStamp) {
     console.log(timeStamp)
-    list.map((item) => {
-      if (item.timeStamp === timeStamp) {
-        
-      }
-    })
+    let newList = JSON.parse(localStorage.getItem("list")).filter(item => item.timeStamp !== timeStamp)
+    setList(newList);
   }
 
   return (
