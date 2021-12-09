@@ -13,11 +13,13 @@ function App() {
   
 
   function addToList(name, checked) {
-    let date = new Date();
+    let date = new Date(),
+    day = date.getDate(),
+    month = (date.getMonth() + 1 ),
+    year = date.getFullYear();
     let listTemp = [...list];
-    listTemp.push({name, checked, date});
+    listTemp.push({name, checked, timeStamp: Date.now(), date: [day, month , year]});
     setList(listTemp);
-
     localStorage.setItem("list", JSON.stringify(list))
   }
 
